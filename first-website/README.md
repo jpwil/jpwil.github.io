@@ -1,1 +1,1 @@
-Let's learn JavaScript
+Let's learn web development

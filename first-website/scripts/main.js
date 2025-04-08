@@ -10,24 +10,3 @@ myImage.addEventListener("click", () => {
     myImage.setAttribute("src", "images/sandfly.jpg");
   }
 });
-
-function setUserName() {
-  const myName = prompt("Please enter your name.");
-  if (!myName) {
-    setUserName();
-  } else {
-    localStorage.setItem("name", myName);
-    myHeading.textContent = `Hello, ${myName}. This is a visceral leishmaniasis summary.`;
-  }
-}
-
-if (!localStorage.getItem("name")) {
-  setUserName();
-} else {
-  const storedName = localStorage.getItem("name");
-  myHeading.textContent = `This is a visceral leishmaniasis summary for ${storedName}`;
-}
-
-myButton.addEventListener("click", () => {
-  setUserName();
-});

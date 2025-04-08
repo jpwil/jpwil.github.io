@@ -17,7 +17,7 @@ function setUserName() {
     setUserName();
   } else {
     localStorage.setItem("name", myName);
-    myHeading.textContent = `This is a visceral leishmaniasis summary for ${myName}`;
+    myHeading.textContent = `Hello, ${myName}. This is a visceral leishmaniasis summary.`;
   }
 }
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Range Selector</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      #slider {
+        margin: 50px auto;
+        width: 80%;
+      }
+      .value-inputs {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px auto;
+        width: 80%;
+      }
+      .value-inputs input {
+        width: 45%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="slider"></div>
+
+    <div class="value-inputs">
+      <input type="number" id="minInput" name="min" placeholder="Min" />
+      <input type="number" id="maxInput" name="max" placeholder="Max" />
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+    <script>
+      const slider = document.getElementById("slider");
+
+      noUiSlider.create(slider, {
+        start: [20, 80], // initial range values
+        connect: true,
+        range: {
+          min: 0,
+          max: 100,
+        },
+        step: 1,
+        tooltips: true, // optional
+        format: {
+          to: (value) => Math.round(value),
+          from: (value) => Number(value),
+        },
+      });
+
+      const minInput = document.getElementById("minInput");
+      const maxInput = document.getElementById("maxInput");
+
+      // Update input fields when slider is moved
+      slider.noUiSlider.on("update", (values, handle) => {
+        const value = values.map(Number);
+        minInput.value = value[0];
+        maxInput.value = value[1];
+      });
+
+      // Update slider when input fields change
+      minInput.addEventListener("change", () => {
+        slider.noUiSlider.set([minInput.value, null]);
+      });
+
+      maxInput.addEventListener("change", () => {
+        slider.noUiSlider.set([null, maxInput.value]);
+      });
+    </script>
+  </body>
+</html>

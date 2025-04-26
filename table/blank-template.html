@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Table template</title>
+    <link href="minimal-table.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Table template</h1>
+    <table>
+      <tr>
+        <th>Header: Hello (table) world!</th>
+        <th>Header: Another cell</th>
+        <th>Header: And another!</th>
+      </tr>
+      <tr>
+        <td>Second row!</td>
+        <td>Another cell</td>
+        <td>And another!</td>
+      </tr>
+      <tr>
+        <td>Third row</td>
+        <td>Another cell</td>
+        <td>And another!</td>
+      </tr>
+    </table>
+    <p>Let's create some space between the tables</p>
+    <table>
+      <caption>
+        This is the table caption which appears above the table, it seems??.
+        Centered, and with a smaller font size.
+      </caption>
+      <thead>
+        <tr>
+          <th colspan="2">Animals</th>
+        </tr>
+      </thead>
+      <tr>
+        <th colspan="2">Hippopotamus</th>
+      </tr>
+      <tr>
+        <th rowspan="2">Horse</th>
+        <td>Mare</td>
+      </tr>
+      <tr>
+        <td>Stallion</td>
+      </tr>
+      <tr>
+        <th colspan="2">Crocodile</th>
+      </tr>
+      <tr>
+        <th rowspan="2">Chicken</th>
+        <td>Hen</td>
+      </tr>
+      <tr>
+        <td>Rooster</td>
+      </tr>
+    </table>
+    <p>Create room for another table</p>
+    <table>
+      <thead>
+        <tr>
+          <th id="clothes" colspan="3">Clothes</th>
+        </tr>
+        <tr>
+          <th id="trousers" headers="clothes">Trousers</th>
+          <th id="skirts" headers="clothes">Skirts</th>
+          <th id="dresses" headers="clothes">Dresses</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th id="belgium" rowspan="3">Belgium</th>
+          <th id="antwerp" headers="belgium">Antwerp</th>
+          <td headers="antwerp belgium clothes trousers">56</td>
+          <td headers="antwerp belgium clothes skirts">22</td>
+          <td headers="antwerp belgium clothes dresses">43</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

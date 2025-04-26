@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leaflet World Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      crossorigin=""
+    />
+
+    <!-- Leaflet JS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      crossorigin=""
+    ></script>
+
+    <style>
+      #map {
+        height: 100vh; /* Full screen */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script>
+      const map = L.map("map").setView([20, 0], 2);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+      }).addTo(map);
+
+      // 🔵 Example Marker: New York
+      L.marker([40.7128, -74.006]).addTo(map).bindPopup("📍 New York City");
+
+      // 🔵 Example Marker: London
+      L.marker([51.5074, -0.1278]).addTo(map).bindPopup("📍 London");
+
+      // 🔵 Example Marker: Delhi
+      L.marker([28.6139, 77.209]).addTo(map).bindPopup("📍 Delhi");
+    </script>
+  </body>
+</html>

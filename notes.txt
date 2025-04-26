@@ -1,0 +1,8 @@
+for react:
+
+https://www.youtube.com/shorts/GC9APhq1h2U
+Next.js to set up
+Tailwind for styling
+
+MUI is good for tables and grids
+lucid react - icons!
